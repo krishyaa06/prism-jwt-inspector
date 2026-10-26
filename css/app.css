@@ -1,0 +1,9 @@
+.jwt{align-items:start}.jwt textarea{min-height:200px;word-break:break-all}
+.tok{display:none}
+.st,.verify{margin-top:12px}.verify{display:flex;flex-direction:column;gap:10px;padding-top:14px;border-top:1px solid var(--line)}
+.verify .pill{align-self:flex-start}.note{margin:14px 0 0}
+pre.code-h{color:#ff7b93;min-height:80px}pre.code-p{color:#d7a8ff;min-height:150px}
+.tbl td:first-child{font:600 13px var(--mono);color:var(--accent);white-space:nowrap}.tbl td small{display:block;color:var(--faint)}
+.tbl td{word-break:break-word}
+.sign{margin-top:16px}.sign textarea{min-height:170px}.w-auto{width:auto}
+.hl-a{color:#ff7b93}.hl-b{color:#d7a8ff}.hl-c{color:#5ee7ff}

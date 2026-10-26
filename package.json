@@ -1,0 +1,29 @@
+{
+  "name": "prism-jwt-inspector",
+  "version": "1.0.0",
+  "description": "Decode, verify and sign JSON Web Tokens locally with expiry status and readable claims.",
+  "scripts": {
+    "test": "node --test",
+    "start": "npx --yes serve ."
+  },
+  "keywords": [
+    "jwt",
+    "json-web-token",
+    "jwt-decoder",
+    "authentication",
+    "webcrypto",
+    "developer-tools",
+    "vanilla-js",
+    "prism-protocol"
+  ],
+  "author": "Soumya Bhandare (krishyaa06)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krishyaa06/prism-jwt-inspector.git"
+  },
+  "homepage": "https://krishyaa06.github.io/prism-jwt-inspector/",
+  "engines": {
+    "node": ">=18.17"
+  }
+}

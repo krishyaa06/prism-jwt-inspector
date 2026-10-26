@@ -1,0 +1,27 @@
+    <section class="grid g2 jwt">
+      <div class="card">
+        <div class="card-title"><h2>Encoded token</h2><div class="row"><button class="btn small" id="sample">Sample</button><button class="btn small ghost" id="clear">Clear</button></div></div>
+        <div class="tok" id="tokView" aria-hidden="true"></div>
+        <textarea id="token" spellcheck="false" aria-label="JWT" placeholder="Paste a JWT (eyJhbGciOi...) or a Bearer header"></textarea>
+        <div class="row st"><span class="pill" id="state">Paste a token</span><span class="pill" id="alg"></span></div>
+        <div class="verify">
+          <label class="field">Secret (HS256 / HS384 / HS512)<input id="secret" class="code" placeholder="your-256-bit-secret" /></label>
+          <span class="pill" id="sig">Signature not checked</span>
+        </div>
+        <p class="muted small note">Your token never leaves this page. Verification uses the browser's Web Crypto API.</p>
+      </div>
+      <div class="stack">
+        <div class="card"><div class="card-title"><h2>Header</h2><button class="btn small" data-copy="h">Copy</button></div><pre class="out code-h" id="header"></pre></div>
+        <div class="card"><div class="card-title"><h2>Payload</h2><button class="btn small" data-copy="p">Copy</button></div><pre class="out code-p" id="payload"></pre></div>
+        <div class="card"><div class="card-title"><h2>Claims</h2></div><table class="tbl" id="claims"></table></div>
+      </div>
+    </section>
+    <section class="card sign">
+      <div class="card-title"><h2>Create a token</h2><select id="salg" class="w-auto"><option>HS256</option><option>HS384</option><option>HS512</option></select></div>
+      <div class="grid g2">
+        <textarea id="spayload" class="code" spellcheck="false" aria-label="Payload to sign"></textarea>
+        <div class="stack"><label class="field">Secret<input id="ssecret" class="code" value="prism-protocol-secret" /></label>
+          <label class="field">Expires in<select id="sexp"><option value="0">No expiry</option><option value="900">15 minutes</option><option value="3600" selected>1 hour</option><option value="86400">1 day</option><option value="604800">7 days</option></select></label>
+          <button class="btn primary" id="signBtn">Sign & inspect</button></div>
+      </div>
+    </section>

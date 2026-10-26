@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prism JWT Inspector · Prism Protocol</title>
+  <meta name="description" content="Decode, verify and sign JSON Web Tokens locally with expiry status and readable claims." />
+  <meta name="theme-color" content="#07080f" />
+  <meta property="og:title" content="Prism JWT Inspector · Prism Protocol" />
+  <meta property="og:description" content="Decode, verify and sign JSON Web Tokens locally with expiry status and readable claims." />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/prism.css" />
+  <link rel="stylesheet" href="css/app.css" />
+  <style>:root{--accent:#D7A8FF;--accent-2:#FF6B8A}</style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./"><span class="mark">◇</span><b>PRISM</b><span>JWT Inspector</span></a>
+    <nav>
+      <a class="btn small" href="https://github.com/krishyaa06/prism-jwt-inspector" target="_blank" rel="noreferrer">★ GitHub</a>
+    </nav>
+  </header>
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">🔐 Dev Tools</p>
+      <h1>Decode JWTs, <em>privately.</em></h1>
+      <p class="lead">Inspect header, payload and claims, see exactly when a token expires, verify HMAC signatures and sign new tokens. Nothing is sent anywhere.</p>
+    </section>
+    <section class="grid g2 jwt">
+      <div class="card">
+        <div class="card-title"><h2>Encoded token</h2><div class="row"><button class="btn small" id="sample">Sample</button><button class="btn small ghost" id="clear">Clear</button></div></div>
+        <div class="tok" id="tokView" aria-hidden="true"></div>
+        <textarea id="token" spellcheck="false" aria-label="JWT" placeholder="Paste a JWT (eyJhbGciOi...) or a Bearer header"></textarea>
+        <div class="row st"><span class="pill" id="state">Paste a token</span><span class="pill" id="alg"></span></div>
+        <div class="verify">
+          <label class="field">Secret (HS256 / HS384 / HS512)<input id="secret" class="code" placeholder="your-256-bit-secret" /></label>
+          <span class="pill" id="sig">Signature not checked</span>
+        </div>
+        <p class="muted small note">Your token never leaves this page. Verification uses the browser's Web Crypto API.</p>
+      </div>
+      <div class="stack">
+        <div class="card"><div class="card-title"><h2>Header</h2><button class="btn small" data-copy="h">Copy</button></div><pre class="out code-h" id="header"></pre></div>
+        <div class="card"><div class="card-title"><h2>Payload</h2><button class="btn small" data-copy="p">Copy</button></div><pre class="out code-p" id="payload"></pre></div>
+        <div class="card"><div class="card-title"><h2>Claims</h2></div><table class="tbl" id="claims"></table></div>
+      </div>
+    </section>
+    <section class="card sign">
+      <div class="card-title"><h2>Create a token</h2><select id="salg" class="w-auto"><option>HS256</option><option>HS384</option><option>HS512</option></select></div>
+      <div class="grid g2">
+        <textarea id="spayload" class="code" spellcheck="false" aria-label="Payload to sign"></textarea>
+        <div class="stack"><label class="field">Secret<input id="ssecret" class="code" value="prism-protocol-secret" /></label>
+          <label class="field">Expires in<select id="sexp"><option value="0">No expiry</option><option value="900">15 minutes</option><option value="3600" selected>1 hour</option><option value="86400">1 day</option><option value="604800">7 days</option></select></label>
+          <button class="btn primary" id="signBtn">Sign & inspect</button></div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="foot">
+    <span>◇ Prism JWT Inspector · Part of <a href="https://dc.gg/prismprotocol" target="_blank" rel="noreferrer">Prism Protocol</a></span>
+    <span><a href="https://github.com/krishyaa06/prism-jwt-inspector" target="_blank" rel="noreferrer">Source</a> · MIT License · Runs 100% in your browser</span>
+  </footer>
+  <script src="js/prism.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
